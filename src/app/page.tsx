@@ -7,8 +7,8 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <Features />
         <Screenshots />
+        <Features />
         <CTA />
       </main>
       <Footer />
