@@ -17,8 +17,8 @@ export function HeroMockup() {
         <Image
           src="/app-screenshots/hero.png"
           alt="Teleprompter app open on a phone, showing a script with scrolling text"
-          width={640}
-          height={853}
+          width={540}
+          height={1170}
           priority
           className="h-auto w-full drop-shadow-[0_30px_60px_rgba(26,26,24,0.18)]"
         />

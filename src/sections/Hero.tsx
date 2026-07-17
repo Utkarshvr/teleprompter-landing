@@ -3,7 +3,7 @@ import { HeroContent, HeroMockup } from "@/components/hero";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 pb-24 sm:pt-20 sm:pb-28 lg:pt-28 lg:pb-32">
+    <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-12 lg:pb-24">
       <div
         aria-hidden
         className="absolute inset-x-0 top-0 -z-10 h-[560px] bg-[linear-gradient(180deg,var(--color-gradient-end),var(--color-gradient-start)_70%)]"

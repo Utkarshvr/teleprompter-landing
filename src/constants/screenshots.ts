@@ -12,6 +12,12 @@ export const APP_SCREENSHOTS: AppScreenshot[] = [
     caption: "Distraction-free reading",
   },
   {
+    id: "screen-4",
+    src: "/app-screenshots/screen-4.png",
+    alt: "Teleprompter recording overlay with draggable controller",
+    caption: "Recording overlay",
+  },
+  {
     id: "screen-2",
     src: "/app-screenshots/screen-2.png",
     alt: "Teleprompter script library with folders",
@@ -22,11 +28,5 @@ export const APP_SCREENSHOTS: AppScreenshot[] = [
     src: "/app-screenshots/screen-3.png",
     alt: "Teleprompter appearance and layout settings",
     caption: "Fine-tuned controls",
-  },
-  {
-    id: "screen-4",
-    src: "/app-screenshots/screen-4.png",
-    alt: "Teleprompter recording overlay with draggable controller",
-    caption: "Recording overlay",
   },
 ];
