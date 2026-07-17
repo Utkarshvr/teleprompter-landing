@@ -1,16 +1,38 @@
+import { isSupabaseConfigured, supabase } from "@/lib/supabase";
+
 export type WaitlistResult = { ok: true } | { ok: false; error: string };
 
+const EMAIL_RE = /^\S+@\S+\.\S+$/;
+
 /**
- * Placeholder for the real waitlist API call. Swap the body for a `fetch`
- * to your backend/provider (e.g. an API route, Supabase, or a form service)
- * — the calling component only cares about the `WaitlistResult` shape.
+ * Saves a waitlist email to Supabase `waiting_list`.
+ * Duplicate emails (unique constraint) are treated as success.
  */
 export async function subscribeToWaitlist(email: string): Promise<WaitlistResult> {
-  if (!/^\S+@\S+\.\S+$/.test(email)) {
+  const normalized = email.trim().toLowerCase();
+
+  if (!EMAIL_RE.test(normalized)) {
     return { ok: false, error: "Enter a valid email address." };
   }
 
-  // TODO: replace with a real request once the backend exists.
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  if (!isSupabaseConfigured) {
+    return {
+      ok: false,
+      error: "Waitlist is temporarily unavailable. Please try again later.",
+    };
+  }
+
+  const { error } = await supabase.from("waiting_list").insert({ email: normalized });
+
+  if (error) {
+    // Unique violation — already signed up
+    if (error.code === "23505") {
+      return { ok: true };
+    }
+
+    console.error("[waitlist]", error.message);
+    return { ok: false, error: "Something went wrong. Please try again." };
+  }
+
   return { ok: true };
 }

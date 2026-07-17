@@ -12,7 +12,7 @@ interface WaitlistFormProps {
   className?: string;
 }
 
-/** Shown before launch — collects an email. Wire `subscribeToWaitlist` to a real backend later. */
+/** Shown before launch — collects an email and saves it via Supabase. */
 export function WaitlistForm({ className }: WaitlistFormProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
