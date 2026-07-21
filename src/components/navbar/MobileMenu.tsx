@@ -53,7 +53,7 @@ export function MobileMenu() {
             </a>
           ))}
           <Button href="/#waitlist" onClick={() => setIsOpen(false)} className="mt-3 w-full">
-            {isAppPublished ? "Download" : "Join waitlist"}
+            {isAppPublished ? "Download" : "Join Early access list"}
           </Button>
         </nav>
       </div>

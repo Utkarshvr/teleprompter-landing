@@ -36,7 +36,7 @@ export function Navbar() {
 
         <div className="hidden items-center md:flex">
           <Button href="/#waitlist" size="md">
-            {isAppPublished ? "Download" : "Join waitlist"}
+            {isAppPublished ? "Download" : "Join Early access list"}
           </Button>
         </div>
 

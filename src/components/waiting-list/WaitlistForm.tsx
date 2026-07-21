@@ -39,13 +39,15 @@ export function WaitlistForm({ className }: WaitlistFormProps) {
     return (
       <div
         className={cn(
-          "flex items-center justify-center gap-2 rounded-full border border-accent/30 bg-accent-muted px-5 py-3 text-sm font-medium text-accent",
+          "flex max-w-md items-start gap-3 rounded-2xl border border-accent/30 bg-accent-muted px-5 py-4 text-left text-sm font-medium leading-relaxed text-accent",
           className,
         )}
         role="status"
       >
-        <Check size={18} aria-hidden />
-        You&apos;re on the list. We&apos;ll email you at launch.
+        <Check size={18} className="mt-0.5 shrink-0" aria-hidden />
+        <p>
+          You&apos;re on the Early Access list. We&apos;ll provide the app to your email shortly.
+        </p>
       </div>
     );
   }
@@ -89,7 +91,7 @@ export function WaitlistForm({ className }: WaitlistFormProps) {
         ) : (
           <Send size={16} aria-hidden />
         )}
-        Join waitlist
+        Join Early access list
       </button>
     </form>
   );
